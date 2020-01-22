@@ -2,7 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
 - name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'test']
+  args: ['test']
 - name: maven:3.6.0-jdk-8-slim
   id: sonar_cloud_code_analysis
   entrypoint: mvn
