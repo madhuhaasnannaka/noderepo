@@ -1,17 +1,8 @@
 steps:
-- name: 'gcr.io/cloud-builders/mvn:3.5.0-jdk-8'
-  id: maven_package
-  args: ['package']
-- name: 'maven:3-jdk-11-slim'
-  id: unit_tests
-  args: [
-          'mvn',
-          
-          '-Dorg.slf4j.simpleLogger.showDateTime=true',
-          '-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS',
-          '-B',
-          'test'
-        ]
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'test']
 - name: maven:3.6.0-jdk-8-slim
   id: sonar_cloud_code_analysis
   entrypoint: mvn
