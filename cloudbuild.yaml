@@ -1,20 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
-- name: maven:3.6.0-jdk-8-slim
-  id: sonar_cloud_code_analysis
-  entrypoint: mvn
-  args: 
-   - 'verify'
-   - 'sonar:sonar'
-   - '-Dsonar.organization=madhuhaasnannaka'
-   - '-Dsonar.projectKey=madhuhaasnannaka_cloudreponodejs'
-   - '-Dsonar.host.url=https://sonarcloud.io'
-   - '-Dsonar.login=418dafbb1bebe15e5d4c053e8bceb8cdfaaeb346'
-   - '-Dsonar.sources=src'
-   - '-Dsonar.tests=src'
-   - '-Dsonar.test.inclusions="**/testing/**,**/*.spec.ts" '
-   - '-Dsonar.typescript.lcov.reportPaths=coverage/lcov.info'
+
 
 
 - name: 'gcr.io/cloud-builders/docker'
