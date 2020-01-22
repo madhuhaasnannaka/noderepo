@@ -22,7 +22,7 @@ steps:
 
   entrypoint: 'npm'
 
-  args: ['yest']
+  args: ['test']
 
 
 
