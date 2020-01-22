@@ -3,7 +3,7 @@ steps:
   args: ['install']
 - name: 'gcr.io/cloud-builders/base'
   entrypoint: 'npm'
-  args: ['test']
+  args: ['sonar']
 - id: 'SonarQube analysis'
   name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
   args:
