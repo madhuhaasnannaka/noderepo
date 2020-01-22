@@ -1,0 +1,51 @@
+steps:
+- name: 'gcr.io/cloud-builders/mvn:3.5.0-jdk-8'
+  id: maven_package
+  args: ['package']
+- name: 'maven:3-jdk-11-slim'
+  id: unit_tests
+  args: [
+          'mvn',
+          
+          '-Dorg.slf4j.simpleLogger.showDateTime=true',
+          '-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS',
+          '-B',
+          'test'
+        ]
+- name: maven:3.6.0-jdk-8-slim
+  id: sonar_cloud_code_analysis
+  entrypoint: mvn
+  args: 
+   - 'verify'
+   - 'sonar:sonar'
+   - '-Dsonar.organization=madhuhaasnannaka'
+   - '-Dsonar.projectKey=madhuhaasnannaka_cloudreponodejs'
+   - '-Dsonar.host.url=https://sonarcloud.io'
+   - '-Dsonar.login=418dafbb1bebe15e5d4c053e8bceb8cdfaaeb346'
+   - '-Dsonar.sources=src'
+   - '-Dsonar.tests=src'
+   - '-Dsonar.test.inclusions="**/testing/**,**/*.spec.ts" '
+   - '-Dsonar.typescript.lcov.reportPaths=coverage/lcov.info'
+
+
+- name: 'gcr.io/cloud-builders/docker'
+  id: building_image_using_docker
+  args: ["build", "-t", "gcr.io/$PROJECT_ID/nodej:$COMMIT_SHA", "-t", "gcr.io/$PROJECT_ID/nodej:latest", "."]
+- name: 'gcr.io/cloud-builders/docker'
+  id: pushing_image_gcr
+  args: ["push", "gcr.io/$PROJECT_ID/nodej:$COMMIT_SHA"]
+- name: 'gcr.io/cloud-builders/docker'
+  id: pushing_container_image_gke
+  args: ["push", "gcr.io/$PROJECT_ID/nodej:latest"]
+- name: 'gcr.io/cloud-builders/gke-deploy:stable'
+  id: deploying_container_gke
+  args:
+  - run
+  - --image=gcr.io/$PROJECT_ID/nodej:latest
+  - --location=us-central1-a
+  - --cluster=standard-cluster-1
+  - --app=nodej
+  - --expose=8085
+  - --namespace=default
+options:
+    machineType: 'N1_HIGHCPU_8'
