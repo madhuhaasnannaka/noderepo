@@ -14,14 +14,10 @@ steps:
 
   args: ['--version']
 
-
-
-# Print npm version.
-
-- name: 'gcr.io/$PROJECT_ID/base'
-
-  entrypoint: 'npm'
-
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+  
+- name: 'gcr.io/cloud-builders/npm'
   args: ['test']
 
 
