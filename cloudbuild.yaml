@@ -8,9 +8,10 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   id: sonar_installing
   args: ['i','sonar-scanner','--save-dev']
-- name: 'gcr.io/cloud-builders/npm'
-  id: sonar_cloud
-  args: ['run','sonar-scanner']
+- name: 'gcr.io/cloud-builders/bash'
+  id: sonar_installing
+  entrypoint: 'bash'
+  args: ['run npm sonar']
 
 
 
