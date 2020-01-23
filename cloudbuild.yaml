@@ -3,13 +3,10 @@ steps:
   id: installing_npm
   args: ['install']
   
-- name: 'gcr.io/cloud-builders/npm'
-  id: installing_karma
-  args: ['install','-g','karma-cli']
 
 - name: 'gcr.io/cloud-builders/npm'
   id: unit_testing
-  args: ['run','test']
+  args: ['install','-g','karma-cli','run','test']
   
 - name: 'gcr.io/cloud-builders/npm'
   id: building_application
