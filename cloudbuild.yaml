@@ -10,7 +10,7 @@ steps:
   args: ['i','sonar-scanner','--save-dev']
 - name: 'gcr.io/cloud-builders/npm'
   id: sonarcloud
-  args: ['npm','sonar']
+  args: ['npm','run','sonar']
 
 
 
