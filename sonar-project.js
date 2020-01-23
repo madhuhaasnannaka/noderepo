@@ -3,8 +3,8 @@ const sonarqubeScanner = require('sonarqube-scanner');
        serverUrl: 'https://sonarcloud.io',
        options : {
        'sonar.login':'418dafbb1bebe15e5d4c053e8bceb8cdfaaeb346'
-       'sonar.projectKey':'test-app'
-       'sonar.projectName':'test-app'
+       'sonar.projectKey':'testapp'
+       'sonar.projectName':'testapp'
        'sonar.projectVersion':'1.0'
        'sonar.language':'js'
        'sonar.sourceEncoding':'UTF-8'
