@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls:  ['./banner.component.css']
 })
 export class BannerComponent {
-  title = 'Test Tour of Heroes';
+  title = 'Welcome to LTTS Devops team';
 }
 
