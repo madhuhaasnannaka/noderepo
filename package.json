@@ -54,7 +54,7 @@
     "typescript": "2.4.2"
   },
   "scripts": {
-      "sonar": "node sonar-project.js"
+      "sonar": "node_modules/sonar-scanner/bin/sonar-scanner"
     },
   "repository": {}
   
