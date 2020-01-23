@@ -8,7 +8,7 @@ steps:
   args: ['run','test:unit']
   
 - name: 'gcr.io/cloud-builders/npm'
-  id: unit_testing
+  id: building_application
   args: ['run','build']
   
 
