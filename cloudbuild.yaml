@@ -7,10 +7,10 @@ steps:
   args: ['install','test']
 - name: 'gcr.io/cloud-builders/npm'
   id: sonar_installing
-  args: ['install','sonarqube-scanner','sonar']
-#- name: 'gcr.io/cloud-builders/npm'
- # id: sonar_cloud
- # args: ['run','sonar']
+  args: ['install','sonarqube-scanner']
+- name: 'gcr.io/cloud-builders/npm'
+  id: sonar_cloud
+  args: ['npm','run','sonar']
 
 
 
