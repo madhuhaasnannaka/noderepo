@@ -22,10 +22,10 @@ import { Hero } from './hero';
 import { HttpHeroService as HeroService } from './http-hero.service';
 
 const makeHeroData = () => [
-  { id: 1, name: 'Windstorm' },
-  { id: 2, name: 'Bombasto' },
-  { id: 3, name: 'Magneta' },
-  { id: 4, name: 'Tornado' }
+  { id: 1, name: 'Madhuhaas' },
+  { id: 2, name: 'Bhaskar' },
+  { id: 3, name: 'Dileep' },
+  { id: 4, name: 'Balaji' }
 ] as Hero[];
 
 ////////  Tests  /////////////
