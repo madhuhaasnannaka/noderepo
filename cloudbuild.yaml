@@ -5,7 +5,12 @@ steps:
 
 - name: 'gcr.io/cloud-builders/npm'
   id: unit_testing
-  args: ['install','test']
+  args: ['run','test:unit']
+  
+- name: 'gcr.io/cloud-builders/npm'
+  id: unit_testing
+  args: ['run','build']
+  
 
 - name: 'gcr.io/cloud-builders/docker'
   id: building_image_using_docker
