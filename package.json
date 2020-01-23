@@ -53,9 +53,9 @@
     "tslint": "^3.15.1",
     "typescript": "2.4.2"
   },
-  "repository": {},
   "scripts": {
-      …
       "sonar": "node sonar-project.js"
-    }
+    },
+  "repository": {}
+  
 }
