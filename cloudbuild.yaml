@@ -8,19 +8,7 @@ steps:
   args: ['install','test']
 - name: 'gcr.io/cloud-builders/npm'
   id: sonar_installing
-  args: ['i','nodejs-sonar-scanner','-D','run','sonar-scanner','Dsonar.host.url=https://sonarcloud.io',
-          'Dsonar.login=418dafbb1bebe15e5d4c053e8bceb8cdfaaeb346',
-          'Dsonar.projectKey=nodejsapp',
-          'Dsonar.projectName=nodejsapp',
-          'Dsonar.projectVersion=1.0',
-          'Dsonar.language=js',
-          'Dsonar.sourceEncoding=UTF-8',
-          'Dsonar.sources=src',
-          'Dsonar.exclusions=**/node_modules/**',
-          'Dsonar.tests=src',
-          'Dsonar.test.inclusions=**/*.spec.ts',
-          'Dsonar.typescript.lcov.reportPaths=coverage/lcov.info'
-          ]
+  args: ['i','nodejs-sonar-scanner','-D','run','sonar-scanner','Dsonar.host.url=https://sonarcloud.io','Dsonar.login=418dafbb1bebe15e5d4c053e8bceb8cdfaaeb346','Dsonar.projectKey=nodejsapp','Dsonar.projectName=nodejsapp','Dsonar.projectVersion=1.0','Dsonar.language=js','Dsonar.sourceEncoding=UTF-8','Dsonar.sources=src','Dsonar.exclusions=**/node_modules/**','Dsonar.tests=src','Dsonar.test.inclusions=**/*.spec.ts','Dsonar.typescript.lcov.reportPaths=coverage/lcov.info']
 
 
 
