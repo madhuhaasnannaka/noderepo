@@ -12,13 +12,10 @@ steps:
   id: building_application
   args: ['run','build']
 
-- name: 'gcr.io/cloud-builders/npm'
-  id: installing_sonar
-  args: ['install','-D','sonarqube-scanner']
   
 - name: 'gcr.io/cloud-builders/npm'
   id: sonarpush
-  args: ['run','test','sonar-scanner']
+  args: ['install','-D','sonarqube-scanner','run','test','sonar-scanner']
   
 
 - name: 'gcr.io/cloud-builders/docker'
