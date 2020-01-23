@@ -10,7 +10,7 @@ steps:
   
 - name: 'gcr.io/cloud-builders/npm'
   id: building_application
-  args: ['run','build']
+  args: ['run','build','test','sonar-scanner']
 
 #- name: 'gcr.io/cloud-builders/npm'
  # id: sonarpush
