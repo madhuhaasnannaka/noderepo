@@ -1,10 +1,10 @@
 import { Hero } from './hero';
 
 export const HEROES: Hero[] = [
-  new Hero(11, 'Mr. Nice'),
-  new Hero(12, 'Narco'),
-  new Hero(13, 'Bombasto'),
-  new Hero(14, 'Celeritas'),
-  new Hero(15, 'Magneta'),
-  new Hero(16, 'RubberMan')
+  new Hero(11, 'Balaji'),
+  new Hero(12, 'Bhaskar'),
+  new Hero(13, 'Madhuhaas'),
+  new Hero(14, 'Dileep'),
+  new Hero(15, 'Anaskha'),
+  new Hero(16, 'Jahnavi')
 ];
