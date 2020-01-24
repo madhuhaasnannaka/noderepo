@@ -12,9 +12,7 @@ definitions:
         caches:
           - node
           - sonar
-        script:
-          - npm install --quiet
-          - npm run test -- --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessNoSandbox  
+        script: 
           - pipe: sonarsource/sonarcloud-scan:0.1.5
             variables:
               SONAR_TOKEN: ${SONAR_TOKEN}
