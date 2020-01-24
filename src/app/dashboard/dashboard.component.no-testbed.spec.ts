@@ -28,7 +28,7 @@ describe('DashboardComponent: w/o Angular TestBed', () => {
   });
 
   it('should NOT have heroes immediately after OnInit', () => {
-    comp.ngOnInit(); // ngOnInit -> getHeroes
+    comp.ngOnInit(); // ngOnInit -> getHeroes 
     expect(comp.heroes.length).toBe(0,
       'should not have heroes until service promise resolves');
   });
