@@ -12,7 +12,7 @@ export class WelcomeComponent  implements OnInit {
 
   ngOnInit(): void {
     this.welcome = this.userService.isLoggedIn ?
-      'Welcome, ' + this.userService.user.name :
+      'Hi, ' + this.userService.user.name :
       'Please log in.';
   }
 }
