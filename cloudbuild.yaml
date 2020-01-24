@@ -6,7 +6,8 @@ steps:
 
 - name: 'gcr.io/cloud-builders/npm'
   id: unit_testing
-  args: ['install','-g','karma-cli','run','test']
+  args: ['run','test','--code-coverage','--no-watch','--no-progress','--browsers=ChromeHeadlessNoSandbox']
+ # args: ['install','-g','karma-cli','run','test']
   
 #- name: 'gcr.io/cloud-builders/npm'
  # id: building_application
