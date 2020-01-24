@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 const quotes = [
-'Always do right. This will gratify some people and astonish the rest.',
+'This is a Demo project for CI/CD Pipeline in GCP.',
 'I have never let my schooling interfere with my education.',
 'Don\'t go around saying the world owes you a living. The world owes you nothing. It was here first.',
 'Whenever you find yourself on the side of the majority, it is time to pause and reflect.',
