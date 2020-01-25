@@ -13,7 +13,7 @@ steps:
  # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
   
 - id: 'SonarQube analysis'
-  name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
+  name: 'gcr.io/$PROJECT_ID/sonarcloud-scanner'
   args:
   - '-Dsonar.host.url=https://sonarcloud.io/'
   - '-Dsonar.login=8f13e08c78c3dac5fa9836533358c19de98f32fd'
@@ -28,7 +28,7 @@ steps:
   - '-Dsonar.test.inclusions=**/*.test.js'
   - '-Dsonar.typescript.lcov.reportPaths=coverage/lcov.info'
   - '-Dsonar.testExecutionReportPaths=test-report.xml'
-
+tags: ['cloud-builders-community']
   
 #- name: 'gcr.io/cloud-builders/npm'
  # id: building_application
