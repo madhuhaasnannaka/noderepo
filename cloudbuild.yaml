@@ -16,12 +16,15 @@ steps:
 #- name: 'gcr.io/cloud-builders/npm'
   #id: building_with_npm
   #args: ['run','build']
-  
+
 
 - name: 'gcr.io/cloud-builders/npm'
   id: unit_testing
   args: ['install','-g','karma-cli','run','test']
  # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
+- name: 'gcr.io/cloud-builders/npm'
+  id: sonr
+  args: ['sonar-scanner']
 
 
 - id: 'SonarQube analysis'
