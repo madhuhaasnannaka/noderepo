@@ -22,7 +22,9 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/sonar-scanner:3.2.0.1227'
   - '.'
-  
+- name: 'gcr.io/cloud-builders/npm'
+  id: installingnpm
+  args: ['install'] 
 - id: 'SonarQube analysis'
   name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
   args:
