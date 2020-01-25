@@ -1,7 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/npm'
   id: installing_npm
-  args: ['install','run','build']
+  args: ['install']
+- name: 'gcr.io/cloud-builders/npm'
+  id: building_with_npm
+  args: ['run','build']
   
 
 - name: 'gcr.io/cloud-builders/npm'
@@ -9,6 +12,23 @@ steps:
   args: ['install','-g','karma-cli','run','test']
  # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
   
+- id: 'SonarQube analysis'
+  name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
+  args:
+  - '-Dsonar.host.url=https://sonarcloud.io/'
+  - '-Dsonar.login=8f13e08c78c3dac5fa9836533358c19de98f32fd'
+  - '-Dsonar.oranization=lttsd'
+  - '-Dsonar.projectKey=lttsd_sample-nodejs-project'
+  - '-Dsonar.projectVersion=1.0'
+  - '-Dsonar.language=js'
+  - '-Dsonar.sourceEncoding=UTF-8'
+  - '-Dsonar.sources=src'
+  - '-Dsonar.exclusions=**/node_modules/**'
+  - '-Dsonar.tests=src'
+  - '-Dsonar.test.inclusions=**/*.test.js'
+  - '-Dsonar.typescript.lcov.reportPaths=coverage/lcov.info'
+  - '-Dsonar.testExecutionReportPaths=test-report.xml'
+
   
 #- name: 'gcr.io/cloud-builders/npm'
  # id: building_application
