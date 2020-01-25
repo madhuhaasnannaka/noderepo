@@ -2,9 +2,9 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   id: installing_npm
   args: ['install','-g','--unsafe-perm']
-- name: 'gcr.io/cloud-builders/npm'
-  id: building_with_npm
-  args: ['run','build']
+#- name: 'gcr.io/cloud-builders/npm'
+ # id: building_with_npm
+  #args: ['run','build']
   
 
 - name: 'gcr.io/cloud-builders/npm'
