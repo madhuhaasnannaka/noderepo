@@ -1,16 +1,4 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
-  id: installing_npm
-  args: ['install','-g','--unsafe-perm']
-#- name: 'gcr.io/cloud-builders/npm'
- # id: building_with_npm
-  #args: ['run','build']
-  
-
-- name: 'gcr.io/cloud-builders/npm'
-  id: unit_testing
-  args: ['install','-g','karma-cli','run','test']
- # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
 - name: 'gcr.io/cloud-builders/docker'
   id: installing sonrscanner
   args: 
@@ -22,6 +10,19 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/sonar-scanner:3.2.0.1227'
   - '.'
+- name: 'gcr.io/cloud-builders/npm'
+  id: installing_npm
+  args: ['install','-g']
+- name: 'gcr.io/cloud-builders/npm'
+  id: building_with_npm
+  args: ['run','build']
+  
+
+- name: 'gcr.io/cloud-builders/npm'
+  id: unit_testing
+  args: ['install','-g','karma-cli','run','test']
+ # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
+
 
 - id: 'SonarQube analysis'
   name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
