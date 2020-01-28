@@ -23,7 +23,10 @@ steps:
   id: unit_testing
   args: ['install','-g','karma-cli','run','test']
  # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
+- name: 'ubuntu'
+  args: ['bash', './sonar.bash']
 
+images: ['gcr.io/$PROJECT_ID/custom-script-test']
 
 - id: 'SonarQube analysis'
   name: 'gcr.io/$PROJECT_ID/sonar-scanner:3.2.0.1227'
