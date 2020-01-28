@@ -15,7 +15,7 @@ steps:
 
 
 - id: 'SonarQube analysis'
-  name: 'gcr.io/$PROJECT_ID/bitbucket.org/madhuhaasnannaka/sonar_scanner:d61283d '
+  name: 'gcr.io/$PROJECT_ID/bitbucket.org/madhuhaasnannaka/sonar_scanner:d61283d'
   args:
   - '-Dsonar.host.url=https://sonarcloud.io/'
   - '-Dsonar.login=cb6e848849a7e9312305f9718e7901b51314f568'
