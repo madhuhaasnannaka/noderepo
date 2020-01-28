@@ -1,4 +1,15 @@
 steps:
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: 
+  - 'build'
+  - '--build-arg'
+  - 'SONARQUBE_SCANNER_CLI_VERSION=3.2.0.1227'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/sonar-scanner:3.2.0.1227'
+  - '.'
 
 - name: 'gcr.io/cloud-builders/npm'
   id: installing_npm
@@ -15,7 +26,7 @@ steps:
 
 
 - id: 'SonarQube analysis'
-  name: 'gcr.io/$PROJECT_ID/bitbucket.org/madhuhaasnannaka/sonar_scanner:aaf6ef6'
+  name: 'gcr.io/$PROJECT_ID/sonar_scanner:latest'
   args:
   - '-Dsonar.projectBaseDir=.'
   - '-Dsonar.host.url=https://sonarcloud.io/'
