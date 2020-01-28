@@ -22,18 +22,16 @@ steps:
   id: unit_testing
   args: ['install','-g','karma-cli','run','test']
  # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
-- name: 'gcr.io/cloud-builders/npm'
-  id: sonr
-  args: ['run','test','sonar-scanner']
 
 
 - id: 'SonarQube analysis'
   name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
   args:
   - '-Dsonar.host.url=https://sonarcloud.io/'
-  - '-Dsonar.login=8f13e08c78c3dac5fa9836533358c19de98f32fd'
-  - '-Dsonar.oranization=lttsd'
-  - '-Dsonar.projectKey=lttsd_sample-nodejs-project'
+  - '-Dsonar.login=418dafbb1bebe15e5d4c053e8bceb8cdfaaeb346'
+  - '-Dsonar.projectKey=MADHUHAAS-NANNAKA_cloudrepo'
+  - '-Dsonar.organizatioin=madhuhaas-nannaka'
+  - '-Dsonar.projectName=cloudrepo'
   - '-Dsonar.projectVersion=1.0'
   - '-Dsonar.language=js'
   - '-Dsonar.sourceEncoding=UTF-8'
