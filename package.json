@@ -11,6 +11,9 @@
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e"
   },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
