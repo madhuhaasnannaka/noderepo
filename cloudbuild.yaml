@@ -21,7 +21,7 @@ steps:
   args: ['i','-D','jest-sonar-reporter']
 - name: 'gcr.io/cloud-builders/npm'
   id: sonarpush
-  args: ['run','sonar-scanner']
+  args: ['run','sonar']
   
   
   
