@@ -17,8 +17,13 @@ steps:
   #args: ['run','build']
 
 - name: 'gcr.io/cloud-builders/npm'
+  id: sonarjest
+  args: ['i','-D','jest-sonar-reporter']
+- name: 'gcr.io/cloud-builders/npm'
   id: sonarpush
-  args: ['install','-D','run','test','sonar-scanner','run sonar']
+  args: ['run','sonar-scanner']
+  
+  
   
 
 - name: 'gcr.io/cloud-builders/docker'
