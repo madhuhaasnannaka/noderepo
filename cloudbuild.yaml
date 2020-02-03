@@ -14,17 +14,7 @@ steps:
 
 #- name: 'gcr.io/cloud-builders/npm'
  # id: building_application
-  #args: ['run','build']
-
-- name: 'gcr.io/cloud-builders/npm'
-  id: sonarjest
-  args: ['i','-D','jest-sonar-reporter']
-- name: 'gcr.io/cloud-builders/npm'
-  id: sonarpush
-  args: ['run','sonar']
-  
-  
-  
+  #args: ['run','build']  
 
 - name: 'gcr.io/cloud-builders/docker'
   id: building_image_using_docker
@@ -40,8 +30,8 @@ steps:
   args:
   - run
   - --image=gcr.io/$PROJECT_ID/nodej:latest
-  - --location=asia-east1-a
-  - --cluster=tf-gke-cluster
+  - --location=us-central1-a
+  - --cluster=standard-cluster-2 
   - --app=nodej
   - --expose=8080
   - --namespace=default
