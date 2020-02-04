@@ -7,12 +7,15 @@
     "ng": "ng",
     "build": "ng build",
     "start": "ng serve",
-    "test": "ng test",
+    //"test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
+    "test": "npm run lint && npm run jest",
+    "test:e2e": "jest --runInBand e2e_tests/*.test.js",
+    "jest": "jest --coverage app/__tests__/*.test.js",
+    "lint": "eslint app/** e2e_tests/*",
+    "sonar": "node sonar-project.js",
+    "prettier": "prettier --write app/*.js app/__{tests,mocks}__/*.js e2e_tests/*.js",
     "e2e": "ng e2e"
-  },
-  "jest": {
-    "testResultsProcessor": "jest-sonar-reporter"
   },
   "keywords": [],
   "author": "",
@@ -33,7 +36,11 @@
     "angular-in-memory-web-api": "~0.5.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "ejs": "~2.5.7",
+    "express": "~4.16.2",
+    "got": "^8.0.1",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
     "@angular/cli": "1.6.5",
@@ -54,8 +61,20 @@
     "protractor": "~5.1.0",
     "ts-node": "^3.3.0",
     "tslint": "^3.15.1",
-    "typescript": "2.4.2"
+    "typescript": "2.4.2",
+    "eslint": "^4.12.1",
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.5",
+    "prettier": "^1.9.1",
+    "supertest": "~3.0.0"
   },
-  "repository": {}
+  "repository": {},
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true
+  },
+  "prettier": {
+    "singleQuote": true
+  }
   
 }
