@@ -7,11 +7,8 @@
     "ng": "ng",
     "build": "ng build",
     "start": "ng serve",
-    "test": "npm run lint",
-    "test:e2e": "jest --runInBand e2e_tests/*.test.js",
-    "jest": "jest --coverage app/__tests__/*.test.js",
-    "sonar": "node sonar-project.js",
-    "lint": "tslint ./src/**/*.ts -t verbose"
+    "test": "ng test",
+    "lint": "tslint ./src/**/*.ts -t verbose",
   },
   "keywords": [],
   "author": "",
