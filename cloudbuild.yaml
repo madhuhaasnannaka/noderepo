@@ -10,6 +10,7 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   id: unit_testing
   args: ['test']
+ 
  # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
 
 #- name: 'gcr.io/cloud-builders/npm'
