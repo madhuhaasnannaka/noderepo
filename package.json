@@ -8,8 +8,7 @@
     "build": "ng build",
     "start": "ng serve",
     "test": "npm run test -- --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessNoSandbox ",
-    "lint": "tslint ./src/**/*.ts -t verbose",
-    "sonar": "node sonar-project.js"
+    "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
   "author": "",
