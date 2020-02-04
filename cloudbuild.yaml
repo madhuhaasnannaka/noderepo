@@ -32,7 +32,7 @@ steps:
   - run
   - --image=gcr.io/$PROJECT_ID/nodej:latest
   - --location=us-east4-c
-  - --cluster=standard-cluster-2 
+  - --cluster=standard-cluster-1
   - --app=nodej
   - --expose=8080
   - --namespace=default
