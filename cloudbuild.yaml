@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/npm'
   id: installing_npm
-  args: ['install','--save-dev']
+  args: ['install']
 - name: 'gcr.io/cloud-builders/npm'
   id: building_with_npm
   args: ['run','build']
@@ -20,19 +20,22 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   id: building_image_using_docker
   args: ["build", "-t", "gcr.io/$PROJECT_ID/nodej:$COMMIT_SHA", "-t", "gcr.io/$PROJECT_ID/nodej:latest", "."]
+  
 - name: 'gcr.io/cloud-builders/docker'
   id: pushing_image_gcr
   args: ["push", "gcr.io/$PROJECT_ID/nodej:$COMMIT_SHA"]
+  
 - name: 'gcr.io/cloud-builders/docker'
   id: pushing_container_image_gke
   args: ["push", "gcr.io/$PROJECT_ID/nodej:latest"]
+  
 - name: 'gcr.io/cloud-builders/gke-deploy:stable'
   id: deploying_container_gke
   args:
   - run
   - --image=gcr.io/$PROJECT_ID/nodej:latest
   - --location=us-central1-a
-  - --cluster=standard-cluster-2 
+  - --cluster=standard-cluster-1 
   - --app=nodej
   - --expose=8080
   - --namespace=default
