@@ -7,7 +7,7 @@
     "ng": "ng",
     "build": "ng build",
     "start": "ng serve",
-    "test": "npm run test -- --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessNoSandbox ",
+    "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
