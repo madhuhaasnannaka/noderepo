@@ -9,6 +9,7 @@
     "start": "ng serve",
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
+    "sonar": "node sonar-project.js"
   },
   "keywords": [],
   "author": "",
