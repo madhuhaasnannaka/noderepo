@@ -44,10 +44,10 @@ steps:
   args:
   - run
   - --image=gcr.io/$PROJECT_ID/nodej:latest
-  - --location=us-east4-c
+  - --location=us-central1-a
   - --cluster=standard-cluster-1
   - --app=nodej
   - --expose=8080
   - --namespace=default
 options:
-    machineType: 'N1_HIGHCPU_8'
+    machineType: 'n1-standard-1'
