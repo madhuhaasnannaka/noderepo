@@ -14,8 +14,8 @@ RUN chown -R $USER:$USER $APP_HOME
 USER $USER
 WORKDIR $APP_HOME
 
+RUN npm cache clean --force --unsafe-perm
 RUN npm install
-RUN npm update
 
 COPY . $APP_HOME/
 
