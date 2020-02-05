@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "cache":"npm cache clean --force --unsafe-perm",
-    "build": "npm build",
+    "build": "node --max_old_space_size=4098 node_modules/@angular/cli/bin/ng build --prod",
     "start": "npm serve",
     "test": "npm test",
     "lint": "tslint ./src/**/*.ts -t verbose",
