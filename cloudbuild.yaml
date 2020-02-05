@@ -45,9 +45,9 @@ steps:
   - run
   - --image=gcr.io/$PROJECT_ID/nodej:latest
   - --location=us-central1-a
-  - --cluster=standard-cluster-1
+  - --cluster=standard-cluster-4
   - --app=nodej
-  - --expose=8080
+  - --expose=8181
   - --namespace=default
 options:
     machineType: 'N1_HIGHCPU_32'
