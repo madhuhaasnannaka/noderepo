@@ -50,4 +50,4 @@ steps:
   - --expose=8080
   - --namespace=default
 options:
-    machineType: 'n1-standard-1'
+    machineType: 'N1-standard-1'
