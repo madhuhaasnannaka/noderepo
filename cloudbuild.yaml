@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/npm'
-  id: installing_npm
+  id: clean
   args: ['cache','clean --force --unsafe-perm']
 - name: 'gcr.io/cloud-builders/npm'
   id: installing_npm
