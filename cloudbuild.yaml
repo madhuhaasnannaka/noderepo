@@ -13,9 +13,9 @@ steps:
  
  # args: ['install','-g','karma-cli','run','test','--','code-coverage','no-watch','no-progress','browsers=ChromeHeadlessNoSandbox']
 
-#- name: 'gcr.io/cloud-builders/npm'
- # id: building_application
-  #args: ['run','build']  
+- name: 'gcr.io/cloud-builders/npm'
+  id: sonarpush
+  args: ['run','sonar']  
 
 - name: 'gcr.io/cloud-builders/docker'
   id: building_image_using_docker
