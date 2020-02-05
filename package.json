@@ -5,6 +5,7 @@
   "description": "Example project from an angular.io guide.",
   "scripts": {
     "ng": "ng",
+    "cache":"npm cache clean --force --unsafe-perm"
     "build": "npm build",
     "start": "npm serve",
     "test": "npm test",
