@@ -1,17 +1,16 @@
 steps:
 
 - name: 'gcr.io/cloud-builders/npm'
+  id: clean
+  args: ['run','cache']
+  
+- name: 'gcr.io/cloud-builders/npm'
   id: installing_npm
   args: ['install']
 
 - name: 'gcr.io/cloud-builders/npm'
-  id: clean
-  args: ['run','cache']
-
-- name: 'gcr.io/cloud-builders/npm'
   id: building_with_npm
   args: ['run','build']
-
 
 - name: 'gcr.io/cloud-builders/npm'
   id: unit_testing
