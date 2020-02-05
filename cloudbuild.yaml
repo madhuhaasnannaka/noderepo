@@ -47,7 +47,7 @@ steps:
   - --location=us-central1-a
   - --cluster=standard-cluster-4
   - --app=nodej
-  - --expose=8181
+  - --expose=8080
   - --namespace=default
 options:
-    machineType: 'N1_HIGHCPU_32'
+    machineType: 'N1_HIGHCPU_8'
