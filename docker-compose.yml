@@ -7,14 +7,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    environment:
+    environment: 
       NODE_ENV: development
-      PORT: 4200
+      PORT: 8080
     volumes:
       - .:/home/angular/app
       - /home/angular/app/node_modules
     ports:
-      - 4200:4200
+      - 8080:8080
     restart: unless-stopped
     # to get this work with https://github.com/jwilder/nginx-proxy 
     # related: https://github.com/jwilder/nginx-proxy/issues/3057
